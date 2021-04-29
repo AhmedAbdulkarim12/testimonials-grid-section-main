@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  border: 2px solid lime;
+  background-color: #ecf2f8;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: "Barlow Semi Condensed", Arial, Helvetica, sans-serif;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#main-container {
+  margin: 0 auto;
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(1fr, 6);
+  grid-gap: 25px;
+  grid-template-areas: "card1 card1 card1 card1 card2 card5" "card3 card4 card4 card4 card4 card5";
+}
+#main-container .cards {
+  border-radius: 5px;
+  padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  animation-name: cards-zoom-end;
+  animation-duration: 200ms;
+  animation-fill-mode: forwards;
+}
+@keyframes cards-zoom-end {
+  0% {
+    transform: scale(1.05);
+  }
+}
+#main-container .cards .profile {
+  display: flex;
+  align-items: center;
+}
+#main-container .cards .profile .photo-box .photo {
+  border: 2px solid white;
+  border-radius: 50%;
+  max-width: 100%;
+  width: 25px;
+  height: auto;
+}
+#main-container .cards .profile .desc-box {
+  padding: 0 15px;
+}
+#main-container .cards .profile .desc-box .verified {
+  opacity: 50%;
+}
+#main-container .cards .review-1 {
+  font-size: 18px;
+  font-weight: 600;
+}
+#main-container .cards .review-2 {
+  opacity: 70%;
+}
+#main-container .cards:hover {
+  animation-name: cards-zoom-start;
+  animation-duration: 200ms;
+  animation-fill-mode: forwards;
+}
+@keyframes cards-zoom-start {
+  100% {
+    transform: scale(1.05);
+  }
+}
+#main-container .card1 {
+  grid-area: card1;
+  background-color: #7541c8;
+  color: white;
+  background-image: url(../images/bg-pattern-quotation.svg);
+  background-position: 80% 2%;
+  background-repeat: no-repeat;
+}
+#main-container .card2 {
+  grid-area: card2;
+  background-color: #48556a;
+  color: white;
+}
+#main-container .card2:hover {
+  animation-name: card2-zoom;
+  animation-duration: 200ms;
+  animation-fill-mode: forwards;
+}
+@keyframes card2-zoom {
+  100% {
+    transform: scale(1.05);
+  }
+}
+#main-container .card3 {
+  grid-area: card3;
+  background-color: white;
+  color: #48556a;
+}
+#main-container .card4 {
+  grid-area: card4;
+  background-color: #19212e;
+  color: white;
+}
+#main-container .card5 {
+  grid-area: card5;
+  background-color: white;
+  color: #19212e;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: #3e52a3;
+}
+
+/*# sourceMappingURL=style.css.map */

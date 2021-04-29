@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500&display=swap')
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600&display=swap')
+
+// Primary Color
+$ModerateViolet: hsl(263, 55%, 52%)
+$VeryDarkGrayishBlue: hsl(217, 19%, 35%)
+$VeryDarkBlackishBlue: hsl(219, 29%, 14%)
+$White: hsl(0, 0%, 100%)
+
+// Neutral Color
+$LightGray: hsl(0, 0%, 81%)
+$LightGrayishBLue: hsl(210, 46%, 95%)
+
+*
+    margin: 0
+    padding: 0
+
+body
+    border: 2px solid lime
+    background-color: $LightGrayishBLue
+    font-size: 13px
+    font-weight: 500
+    font-family: 'Barlow Semi Condensed', Arial, Helvetica, sans-serif
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    display: inline-flex
+    flex-direction: column
+    justify-content: center
+
+#main-container
+    // border: 1px solid crimson
+    margin: 0 auto
+    width: 80%
+    display: grid
+    grid-template-columns: repeat(1fr, 6)
+    grid-gap: 25px
+    grid-template-areas: "card1 card1 card1 card1 card2 card5" "card3 card4 card4 card4 card4 card5"
+
+    .cards
+        // border: 1px solid black
+        border-radius: 5px
+        padding: 20px 30px
+        display: flex
+        flex-direction: column
+        justify-content: flex-start
+
+        //Animasi-Zoom
+        animation-name: cards-zoom-end
+        animation-duration: 200ms
+        animation-fill-mode: forwards 
+
+        @keyframes cards-zoom-end
+            0%
+                transform: scale(1.05)
+
+        .profile
+            display: flex
+            align-items: center
+
+            .photo-box
+                .photo
+                    border: 2px solid $White
+                    border-radius: 50%
+                    max-width: 100%
+                    width: 25px
+                    height: auto
+
+            .desc-box
+                padding: 0 15px
+
+                .verified
+                    opacity: 50%
+
+        .review-1
+            font-size: 18px
+            font-weight: 600
+
+        .review-2
+            opacity: 70%
+    
+    .cards:hover
+        animation-name: cards-zoom-start
+        animation-duration: 200ms
+        animation-fill-mode: forwards
+
+    @keyframes cards-zoom-start
+        100%
+            transform: scale(1.05)
+
+    .card1
+        grid-area: card1
+        background-color: $ModerateViolet
+        color: $White
+        background-image: url(../images/bg-pattern-quotation.svg)
+        background-position: 80% 2%
+        background-repeat: no-repeat
+
+    .card2
+        grid-area: card2
+        background-color: $VeryDarkGrayishBlue
+        color: $White
+
+    .card2:hover
+        animation-name: card2-zoom
+        animation-duration: 200ms
+        animation-fill-mode: forwards
+
+    @keyframes card2-zoom
+        100%
+            transform: scale(1.05)
+
+    .card3
+        grid-area: card3
+        background-color: $White
+        color: $VeryDarkGrayishBlue
+
+    .card4
+        grid-area: card4
+        background-color: $VeryDarkBlackishBlue
+        color: $White
+
+    .card5
+        grid-area: card5
+        background-color: $White
+        color: $VeryDarkBlackishBlue
+
+.attribution
+    // position: absolute
+    // left: 0
+    // right: 0
+    // bottom: 10px
+    font-size: 11px
+    text-align: center
+
+.attribution a
+    color: hsl(228, 45%, 44%)
