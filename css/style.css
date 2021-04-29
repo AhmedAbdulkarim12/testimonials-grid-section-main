@@ -15,23 +15,19 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 #main-container {
-  margin: 0 auto;
-  width: 80%;
+  margin: 50px auto;
+  width: 1024px;
   display: grid;
-  grid-template-columns: repeat(1fr, 6);
+  grid-template-columns: repeat(auto-fit);
   grid-gap: 25px;
   grid-template-areas: "card1 card1 card1 card1 card2 card5" "card3 card4 card4 card4 card4 card5";
 }
 #main-container .cards {
   border-radius: 5px;
-  padding: 20px 30px;
+  padding: 20px 25px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -62,7 +58,7 @@ body {
   opacity: 50%;
 }
 #main-container .cards .review-1 {
-  font-size: 18px;
+  font-size: 19px;
   font-weight: 600;
 }
 #main-container .cards .review-2 {
@@ -91,16 +87,6 @@ body {
   background-color: #48556a;
   color: white;
 }
-#main-container .card2:hover {
-  animation-name: card2-zoom;
-  animation-duration: 200ms;
-  animation-fill-mode: forwards;
-}
-@keyframes card2-zoom {
-  100% {
-    transform: scale(1.05);
-  }
-}
 #main-container .card3 {
   grid-area: card3;
   background-color: white;
@@ -118,12 +104,23 @@ body {
 }
 
 .attribution {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 10px;
   font-size: 11px;
   text-align: center;
 }
 
 .attribution a {
   color: #3e52a3;
+}
+
+@media screen and (max-width: 1024px) {
+  #main-container {
+    width: 900px;
+    grid-template-areas: "card1 card1 card1 card1 card2 card2" "card5 card5 card5 card5 card5 card5" "card3 card3 card4 card4 card4 card4";
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
