@@ -38,7 +38,7 @@ body {
 }
 @keyframes cards-zoom-end {
   0% {
-    transform: scale(1.03);
+    transform: scale(1.05);
   }
 }
 #main-container .box-container .cards .profile {
@@ -77,7 +77,7 @@ body {
 }
 @keyframes cards-zoom-start {
   100% {
-    transform: scale(1.03);
+    transform: scale(1.05);
   }
 }
 #main-container .box-container .card1 {
