@@ -19,110 +19,154 @@ $LightGrayishBLue: hsl(210, 46%, 95%)
 body
     // border: 2px solid lime
     background-color: $LightGrayishBLue
-    margin: auto
-    width: 100%
-    height: 100%
     font-size: 13px
     font-weight: 500
     font-family: 'Barlow Semi Condensed', Arial, Helvetica, sans-serif
     position: absolute
     top: 0
     bottom: 0
+    left: 0
+    right: 0
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
 
 #main-container
-    border: 1px solid crimson
-    margin: 0 auto
-    padding: 50px
-    width: 1024px
-    display: grid
-    grid-template-columns: repeat(auto-fit, 1fr)
-    grid-gap: 25px
-    grid-template-areas: "card1 card1 card1 card1 card2 card5" "card3 card4 card4 card4 card4 card5"
+    // border: 1px solid crimson
 
-    .cards
-        // border: 1px solid black
-        border-radius: 5px
-        padding: 20px 25px
+    .box-container
+        // border: 2px solid lightblue
+        width: 1024px
+        display: grid
+        grid-template-columns: repeat(auto-fit, 1fr)
+        grid-gap: 25px
+        grid-template-areas: "card1 card1 card1 card1 card2 card5" "card3 card4 card4 card4 card4 card5"
 
-        //Animasi-Zoom
-        animation-name: cards-zoom-end
-        animation-duration: 200ms
-        animation-fill-mode: forwards
+        .cards
+            // border: 1px solid black
+            border-radius: 5px
+            padding: 20px 25px
 
-        @keyframes cards-zoom-end
-            0%
+            //Animasi-Zoom
+            animation-name: cards-zoom-end
+            animation-duration: 200ms
+            animation-fill-mode: forwards
+
+            @keyframes cards-zoom-end
+                0%
+                    transform: scale(1.03)
+
+            .profile
+                display: flex
+                align-items: center
+
+                .photo-box
+                    .photo
+                        border: 2px solid $White
+                        border-radius: 50%
+                        max-width: 100%
+                        width: 25px
+                        height: auto
+
+                .desc-box
+                    padding: 0 15px
+
+                    .verified
+                        opacity: 50%
+
+            .review-1
+                font-size: 19px
+                font-weight: 600
+
+            .review-2
+                opacity: 70%
+    
+        .cards:hover
+            animation-name: cards-zoom-start
+            animation-duration: 150ms
+            animation-fill-mode: forwards
+
+        @keyframes cards-zoom-start
+            100%
                 transform: scale(1.03)
 
-        .profile
-            display: flex
-            align-items: center
+        .card1
+            grid-area: card1
+            background-color: $ModerateViolet
+            color: $White
+            background-image: url(../images/bg-pattern-quotation.svg)
+            background-position: 80% 2%
+            background-repeat: no-repeat
 
-            .photo-box
-                .photo
-                    border: 2px solid $White
-                    border-radius: 50%
-                    max-width: 100%
-                    width: 25px
-                    height: auto
+        .card2
+            grid-area: card2
+            background-color: $VeryDarkGrayishBlue
+            color: $White
 
-            .desc-box
-                padding: 0 15px
+        .card3
+            grid-area: card3
+            background-color: $White
+            color: $VeryDarkGrayishBlue
 
-                .verified
-                    opacity: 50%
+        .card4
+            grid-area: card4
+            background-color: $VeryDarkBlackishBlue
+            color: $White
 
-        .review-1
-            font-size: 19px
-            font-weight: 600
+        .card5
+            grid-area: card5
+            background-color: $White
+            color: $VeryDarkBlackishBlue
 
-        .review-2
-            opacity: 70%
+    .attribution
+        margin-top: 20px
+        font-size: 11px
+        text-align: center
     
-    .cards:hover
-        animation-name: cards-zoom-start
-        animation-duration: 150ms
-        animation-fill-mode: forwards
+    .attribution a
+        color: hsl(228, 45%, 44%)
 
-    @keyframes cards-zoom-start
-        100%
-            transform: scale(1.03)
+@media screen and (max-width: 1080px)
+    body
+        justify-content: space-between
 
-    .card1
-        grid-area: card1
-        background-color: $ModerateViolet
-        color: $White
-        background-image: url(../images/bg-pattern-quotation.svg)
-        background-position: 80% 2%
-        background-repeat: no-repeat
-
-    .card2
-        grid-area: card2
-        background-color: $VeryDarkGrayishBlue
-        color: $White
-
-    .card3
-        grid-area: card3
-        background-color: $White
-        color: $VeryDarkGrayishBlue
-
-    .card4
-        grid-area: card4
-        background-color: $VeryDarkBlackishBlue
-        color: $White
-
-    .card5
-        grid-area: card5
-        background-color: $White
-        color: $VeryDarkBlackishBlue
-
-.attribution
-    font-size: 11px
-    text-align: center
-
-.attribution a
-    color: hsl(228, 45%, 44%)
-
-@media screen and (max-width: 1024px)
     #main-container
-        width: 900px
-        grid-template-areas: "card1 card1 card1 card1 card2 card2" "card5 card5 card5 card5 card5 card5" "card3 card3 card4 card4 card4 card4"
+        margin: auto
+        padding: 50px 0
+
+        .box-container
+            width: 900px
+            margin: 0 auto
+            grid-template-areas: "card1 card1 card1 card1 card2 card2" "card5 card5 card5 card5 card5 card5" "card3 card3 card4 card4 card4 card4"
+
+@media screen and (max-width: 950px)
+    body
+        position: relative
+        display: block
+
+    #main-container
+        width: 100%
+        padding: 50px 0
+
+        .box-container
+            width: 80%
+            margin: 0 auto
+            grid-template-areas: "card1 card1 card1 card2 card2 card2" "card5 card5 card5 card5 card5 card5" "card3 card3 card3 card4 card4 card4"
+
+@media screen and (max-width: 630px)
+    body
+        position: relative
+        display: block
+
+    #main-container
+        width: 100%
+        padding: 50px 0
+
+        .box-container
+            width: 80%
+            margin: 0 auto
+            display: block
+
+            .cards
+                margin: 25px 0

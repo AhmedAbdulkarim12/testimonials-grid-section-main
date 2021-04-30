@@ -7,28 +7,28 @@
 
 body {
   background-color: #ecf2f8;
-  margin: auto;
-  width: 100%;
-  height: 100%;
   font-size: 13px;
   font-weight: 500;
   font-family: "Barlow Semi Condensed", Arial, Helvetica, sans-serif;
   position: absolute;
   top: 0;
   bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-#main-container {
-  border: 1px solid crimson;
-  margin: 0 auto;
-  padding: 50px;
+#main-container .box-container {
   width: 1024px;
   display: grid;
   grid-template-columns: repeat(auto-fit, 1fr);
   grid-gap: 25px;
   grid-template-areas: "card1 card1 card1 card1 card2 card5" "card3 card4 card4 card4 card4 card5";
 }
-#main-container .cards {
+#main-container .box-container .cards {
   border-radius: 5px;
   padding: 20px 25px;
   animation-name: cards-zoom-end;
@@ -40,31 +40,31 @@ body {
     transform: scale(1.03);
   }
 }
-#main-container .cards .profile {
+#main-container .box-container .cards .profile {
   display: flex;
   align-items: center;
 }
-#main-container .cards .profile .photo-box .photo {
+#main-container .box-container .cards .profile .photo-box .photo {
   border: 2px solid white;
   border-radius: 50%;
   max-width: 100%;
   width: 25px;
   height: auto;
 }
-#main-container .cards .profile .desc-box {
+#main-container .box-container .cards .profile .desc-box {
   padding: 0 15px;
 }
-#main-container .cards .profile .desc-box .verified {
+#main-container .box-container .cards .profile .desc-box .verified {
   opacity: 50%;
 }
-#main-container .cards .review-1 {
+#main-container .box-container .cards .review-1 {
   font-size: 19px;
   font-weight: 600;
 }
-#main-container .cards .review-2 {
+#main-container .box-container .cards .review-2 {
   opacity: 70%;
 }
-#main-container .cards:hover {
+#main-container .box-container .cards:hover {
   animation-name: cards-zoom-start;
   animation-duration: 150ms;
   animation-fill-mode: forwards;
@@ -74,7 +74,7 @@ body {
     transform: scale(1.03);
   }
 }
-#main-container .card1 {
+#main-container .box-container .card1 {
   grid-area: card1;
   background-color: #7541c8;
   color: white;
@@ -82,40 +82,83 @@ body {
   background-position: 80% 2%;
   background-repeat: no-repeat;
 }
-#main-container .card2 {
+#main-container .box-container .card2 {
   grid-area: card2;
   background-color: #48556a;
   color: white;
 }
-#main-container .card3 {
+#main-container .box-container .card3 {
   grid-area: card3;
   background-color: white;
   color: #48556a;
 }
-#main-container .card4 {
+#main-container .box-container .card4 {
   grid-area: card4;
   background-color: #19212e;
   color: white;
 }
-#main-container .card5 {
+#main-container .box-container .card5 {
   grid-area: card5;
   background-color: white;
   color: #19212e;
 }
-
-.attribution {
+#main-container .attribution {
+  margin-top: 20px;
   font-size: 11px;
   text-align: center;
 }
-
-.attribution a {
+#main-container .attribution a {
   color: #3e52a3;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1080px) {
+  body {
+    justify-content: space-between;
+  }
+
   #main-container {
+    margin: auto;
+    padding: 50px 0;
+  }
+  #main-container .box-container {
     width: 900px;
+    margin: 0 auto;
     grid-template-areas: "card1 card1 card1 card1 card2 card2" "card5 card5 card5 card5 card5 card5" "card3 card3 card4 card4 card4 card4";
+  }
+}
+@media screen and (max-width: 950px) {
+  body {
+    position: relative;
+    display: block;
+  }
+
+  #main-container {
+    width: 100%;
+    padding: 50px 0;
+  }
+  #main-container .box-container {
+    width: 80%;
+    margin: 0 auto;
+    grid-template-areas: "card1 card1 card1 card2 card2 card2" "card5 card5 card5 card5 card5 card5" "card3 card3 card3 card4 card4 card4";
+  }
+}
+@media screen and (max-width: 630px) {
+  body {
+    position: relative;
+    display: block;
+  }
+
+  #main-container {
+    width: 100%;
+    padding: 50px 0;
+  }
+  #main-container .box-container {
+    width: 80%;
+    margin: 0 auto;
+    display: block;
+  }
+  #main-container .box-container .cards {
+    margin: 25px 0;
   }
 }
 
