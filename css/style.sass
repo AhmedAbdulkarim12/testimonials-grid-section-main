@@ -17,22 +17,25 @@ $LightGrayishBLue: hsl(210, 46%, 95%)
     padding: 0
 
 body
-    border: 2px solid lime
+    // border: 2px solid lime
     background-color: $LightGrayishBLue
+    margin: auto
+    width: 100%
+    height: 100%
     font-size: 13px
     font-weight: 500
     font-family: 'Barlow Semi Condensed', Arial, Helvetica, sans-serif
     position: absolute
     top: 0
-    left: 0
-    right: 0
+    bottom: 0
 
 #main-container
-    // border: 1px solid crimson
-    margin: 50px auto
+    border: 1px solid crimson
+    margin: 0 auto
+    padding: 50px
     width: 1024px
     display: grid
-    grid-template-columns: repeat(auto-fit)
+    grid-template-columns: repeat(auto-fit, 1fr)
     grid-gap: 25px
     grid-template-areas: "card1 card1 card1 card1 card2 card5" "card3 card4 card4 card4 card4 card5"
 
@@ -40,18 +43,15 @@ body
         // border: 1px solid black
         border-radius: 5px
         padding: 20px 25px
-        display: flex
-        flex-direction: column
-        justify-content: flex-start
 
         //Animasi-Zoom
         animation-name: cards-zoom-end
         animation-duration: 200ms
-        animation-fill-mode: forwards 
+        animation-fill-mode: forwards
 
         @keyframes cards-zoom-end
             0%
-                transform: scale(1.05)
+                transform: scale(1.03)
 
         .profile
             display: flex
@@ -80,12 +80,12 @@ body
     
     .cards:hover
         animation-name: cards-zoom-start
-        animation-duration: 200ms
+        animation-duration: 150ms
         animation-fill-mode: forwards
 
     @keyframes cards-zoom-start
         100%
-            transform: scale(1.05)
+            transform: scale(1.03)
 
     .card1
         grid-area: card1
@@ -116,10 +116,6 @@ body
         color: $VeryDarkBlackishBlue
 
 .attribution
-    position: absolute
-    left: 0
-    right: 0
-    bottom: 10px
     font-size: 11px
     text-align: center
 
