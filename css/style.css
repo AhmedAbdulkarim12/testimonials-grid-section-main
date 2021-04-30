@@ -31,6 +31,7 @@ body {
 #main-container .box-container .cards {
   border-radius: 5px;
   padding: 20px 25px;
+  box-shadow: 3px 10px 15px 0 rgba(128, 128, 128, 0.185);
   animation-name: cards-zoom-end;
   animation-duration: 200ms;
   animation-fill-mode: forwards;
@@ -44,12 +45,17 @@ body {
   display: flex;
   align-items: center;
 }
-#main-container .box-container .cards .profile .photo-box .photo {
-  border: 2px solid white;
+#main-container .box-container .cards .profile .photo-box .photos {
   border-radius: 50%;
   max-width: 100%;
   width: 25px;
   height: auto;
+}
+#main-container .box-container .cards .profile .photo-box .photo-4 {
+  border: 2px solid #7541c89a;
+}
+#main-container .box-container .cards .profile .photo-box .photo-1, #main-container .box-container .cards .profile .photo-box .photo-2, #main-container .box-container .cards .profile .photo-box .photo-3, #main-container .box-container .cards .profile .photo-box .photo-5 {
+  border: 2px solid rgba(255, 255, 255, 0.438);
 }
 #main-container .box-container .cards .profile .desc-box {
   padding: 0 15px;
